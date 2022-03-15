@@ -5,7 +5,8 @@ let buttonPc = document.getElementById("guestNumber");
 
 buttonPc.addEventListener("click",
     function(){
-        buttonPc.classList.add("click");
+        buttonPc.classList.remove("btn-success");
+        buttonPc.classList.add("btn-primary");
         randomPc = Math.floor(Math.random()*6 + 1);
     }
 );
@@ -14,7 +15,8 @@ let buttonUtente = document.getElementById("yourNumber");
 
 buttonUtente.addEventListener("click",
     function(){
-        buttonUtente.classList.add("click");
+        buttonUtente.classList.remove("btn-success");
+        buttonUtente.classList.add("btn-primary");
         randomUtente = Math.floor(Math.random()*6 + 1);
     }
 );
@@ -28,8 +30,9 @@ buttonResult.addEventListener("click",
             alert("Attenzione! Genera prima i numeri!");
             return;
         }
-        box.classList.add("boxEdit")
-        buttonResult.classList.add("click");
+        box.classList.add("boxEdit");
+        buttonResult.classList.remove("btn-success");
+        buttonResult.classList.add("btn-primary");
         document.getElementById("numberUtente").innerHTML = `Il tuo numero è: ${randomUtente}`;
         document.getElementById("numberPC").innerHTML = `Il numero del tuo avversario è: ${randomPc}`;
         if (randomPc > randomUtente){
